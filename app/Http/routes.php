@@ -20,7 +20,7 @@ Route::get('auth/github/callback', function(){
 	// Automatically log in existing users
     // or create a new user if necessary.
     SocialAuth::login('github',function($user, $details){
-          dd($details->raw());
+          
       });
 
     // Current user is now available via Auth facade
