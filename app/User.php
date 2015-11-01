@@ -39,4 +39,16 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     //protected $hidden = ['password', 'remember_token'];
+
+
+    public function Oauth()
+    
+       {
+        
+        return $this->hasOne('App\Oauth','user_id');
+
+       }
+
+    
+
 }

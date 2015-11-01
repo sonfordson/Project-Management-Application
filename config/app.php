@@ -149,6 +149,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -203,6 +204,8 @@ return [
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'GitHub'     => GrahamCampbell\GitHub\Facades\GitHub::class,
         'SocialAuth' => AdamWathan\EloquentOAuth\Facades\OAuth::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
+        'HTML'      => Illuminate\Html\HtmlFacade::class,
          
 
     ],

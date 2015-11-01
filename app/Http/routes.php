@@ -1,15 +1,15 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+Route::get('repo', ['uses' => 'GithubController@index', 'as' => 'index']);
+
+Route::get('/finder', ['uses' => 'GithubController@finder', 'as' => 'finder']);
+
+Route::get('/edit', ['uses' => 'GithubController@edit', 'as' => 'edit_file']);
+
+Route::post('/update', ['uses' => 'GithubController@update', 'as' => 'update_file']);
+
+Route::get('/commits', ['uses' => 'GithubController@commits', 'as' => 'commits']);
+
 
 
 Route::get('auth/github', function(){
@@ -25,7 +25,7 @@ Route::get('auth/github/callback', function(){
 
     // Current user is now available via Auth facade
     $user = Auth::user();
-    return Redirect::to('home');
+    return Redirect::to('repo');
 });
 Route::controllers([
 	'auth' => 'Auth\AuthController',
